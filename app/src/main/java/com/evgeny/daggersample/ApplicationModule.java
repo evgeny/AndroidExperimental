@@ -27,8 +27,8 @@ public class ApplicationModule {
 
     @Provides
     @Singleton
-    ClientSource provideClientSource() {
-        return new RestClientSource();
+    ClientSource provideClientSource(RestClientSource clientSource) {
+        return clientSource;
     }
 
     @Provides

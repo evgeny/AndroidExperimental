@@ -5,5 +5,5 @@ import dagger.Subcomponent;
 @ActivityScope
 @Subcomponent(modules = ActivityModule.class)
 public interface ActivityComponent {
-    BaseActivity inject(BaseActivity activity);
+    void inject(BaseActivity activity);
 }

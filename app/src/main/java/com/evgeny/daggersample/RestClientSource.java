@@ -3,13 +3,13 @@ package com.evgeny.daggersample;
 import android.util.Log;
 
 import com.google.gson.Gson;
-import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
 
 import java.io.IOException;
-import java.util.List;
+
+import javax.inject.Inject;
 
 public class RestClientSource implements ClientSource {
 
@@ -17,8 +17,9 @@ public class RestClientSource implements ClientSource {
     private final Gson gson;
     private final String eventsUrl = "http://www.bonn.de/tools/mobil/api.json.php?mod=veranstaltungen";
 
-    public RestClientSource() {
-        this.okHttpClient = new OkHttpClient();
+    @Inject
+    public RestClientSource(OkHttpClient okHttpClient) {
+        this.okHttpClient = okHttpClient;
         this.gson = new Gson();
     }
 
@@ -32,27 +33,16 @@ public class RestClientSource implements ClientSource {
 
         try {
             Response httpResponse = okHttpClient.newCall(request).execute();
-            ResponseC response = gson.fromJson(httpResponse.body().charStream(), ResponseC.class);
+            ResponseEvents response = gson.fromJson(httpResponse.body().charStream(), ResponseEvents.class);
             return response.items;
         } catch (IOException e) {
             e.printStackTrace();
         }
-//        okHttpClient.newCall(request).enqueue(new Callback() {
-//            @Override
-//            public void
-//            onFailure(Request request, IOException e) {
-//                Log.d("Rest", "onFailure");
-//            }
-//
-//            @Override
-//            public void onResponse(Response response) throws IOException {
-//                Log.d("Rest", "onResponse");
-//            }
-//        });
+
         return null;
     }
 
-    private static class ResponseC {
+    private static class ResponseEvents {
         boolean success;
         Event[] items;
         int count;
