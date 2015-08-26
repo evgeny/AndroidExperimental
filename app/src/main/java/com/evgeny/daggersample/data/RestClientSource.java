@@ -1,7 +1,9 @@
-package com.evgeny.daggersample;
+package com.evgeny.daggersample.data;
 
 import android.util.Log;
 
+import com.evgeny.daggersample.data.ClientSource;
+import com.evgeny.daggersample.data.Event;
 import com.google.gson.Gson;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;

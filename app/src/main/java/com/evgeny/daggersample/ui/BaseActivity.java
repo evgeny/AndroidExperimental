@@ -1,4 +1,4 @@
-package com.evgeny.daggersample;
+package com.evgeny.daggersample.ui;
 
 import android.app.LoaderManager;
 import android.content.AsyncTaskLoader;
@@ -8,10 +8,18 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 
+import com.evgeny.daggersample.data.ClientSource;
+import com.evgeny.daggersample.data.Event;
+import com.evgeny.daggersample.EventListAdapter;
+import com.evgeny.daggersample.R;
+import com.evgeny.daggersample.SampleApplication;
+import com.evgeny.daggersample.injection.module.ActivityModule;
+
 import javax.inject.Inject;
 
 public class BaseActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Event[]>{
-    @Inject ClientSource clientSource;
+    @Inject
+    ClientSource clientSource;
 
     @Inject
     LocationManager locationManager;

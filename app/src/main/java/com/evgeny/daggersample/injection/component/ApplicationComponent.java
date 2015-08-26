@@ -1,6 +1,8 @@
-package com.evgeny.daggersample;
+package com.evgeny.daggersample.injection.component;
 
-import android.app.Application;
+import com.evgeny.daggersample.injection.module.ActivityModule;
+import com.evgeny.daggersample.injection.module.ApplicationModule;
+import com.evgeny.daggersample.injection.component.ActivityComponent;
 
 import javax.inject.Singleton;
 

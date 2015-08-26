@@ -1,4 +1,4 @@
-package com.evgeny.daggersample;
+package com.evgeny.daggersample.data;
 
 /**
  * Created by evgeny on 21.08.15.

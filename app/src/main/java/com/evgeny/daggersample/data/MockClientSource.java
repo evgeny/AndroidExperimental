@@ -1,8 +1,9 @@
-package com.evgeny.daggersample;
+package com.evgeny.daggersample.data;
 
 import android.util.Log;
 
-import java.util.List;
+import com.evgeny.daggersample.data.ClientSource;
+import com.evgeny.daggersample.data.Event;
 
 /**
  * Created by evgeny on 21.08.15.

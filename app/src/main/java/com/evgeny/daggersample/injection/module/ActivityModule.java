@@ -1,4 +1,8 @@
-package com.evgeny.daggersample;
+package com.evgeny.daggersample.injection.module;
+
+import com.evgeny.daggersample.injection.scope.ActivityScope;
+import com.evgeny.daggersample.ui.BaseActivity;
+import com.evgeny.daggersample.EventListAdapter;
 
 import dagger.Module;
 import dagger.Provides;

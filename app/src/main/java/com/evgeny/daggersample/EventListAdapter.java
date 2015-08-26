@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.evgeny.daggersample.data.Event;
+
 import javax.inject.Inject;
 
 public class EventListAdapter extends BaseAdapter {

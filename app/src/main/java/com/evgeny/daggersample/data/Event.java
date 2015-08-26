@@ -1,4 +1,4 @@
-package com.evgeny.daggersample;
+package com.evgeny.daggersample.data;
 
 public class Event {
     public int id;

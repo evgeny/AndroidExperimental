@@ -1,4 +1,4 @@
-package com.evgeny.daggersample;
+package com.evgeny.daggersample.injection.scope;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
