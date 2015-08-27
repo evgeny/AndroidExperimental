@@ -4,15 +4,16 @@ import android.app.Application;
 import android.content.Context;
 import android.location.LocationManager;
 
-import com.evgeny.daggersample.data.ClientSource;
-import com.evgeny.daggersample.data.RestClientSource;
-import com.squareup.okhttp.OkHttpClient;
+import com.google.gson.Gson;
 
 import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
 
+/**
+ * Application dependencies
+ */
 @Module
 public class ApplicationModule {
     private final Application application;
@@ -29,13 +30,7 @@ public class ApplicationModule {
 
     @Provides
     @Singleton
-    ClientSource provideClientSource(RestClientSource clientSource) {
-        return clientSource;
-    }
-
-    @Provides
-    @Singleton
-    OkHttpClient provideHttpClient() {
-        return new OkHttpClient();
+    Gson provideJsonParser() {
+        return new Gson();
     }
 }

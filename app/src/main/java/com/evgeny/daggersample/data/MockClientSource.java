@@ -2,16 +2,32 @@ package com.evgeny.daggersample.data;
 
 import android.util.Log;
 
-import com.evgeny.daggersample.data.ClientSource;
-import com.evgeny.daggersample.data.Event;
+import javax.inject.Inject;
+import javax.inject.Singleton;
 
-/**
- * Created by evgeny on 21.08.15.
- */
+@Singleton
 public class MockClientSource implements ClientSource {
+
+    @Inject
+    public MockClientSource() {}
+
     @Override
     public Event[] findAll() {
         Log.d("Mock", "findAll");
-        return null;
+        Event event1 = new Event();
+        event1.id = 1;
+        event1.title = "Event 1";
+
+        Event event2 = new Event();
+        event2.id = 2;
+        event2.title = "Event 2";
+
+        Event event3 = new Event();
+        event3.id = 3;
+        event3.title = "Event 3";
+
+        return new Event[]{
+                event1, event2, event3
+        };
     }
 }

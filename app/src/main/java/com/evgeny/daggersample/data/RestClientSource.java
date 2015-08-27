@@ -12,7 +12,9 @@ import com.squareup.okhttp.Response;
 import java.io.IOException;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 
+@Singleton
 public class RestClientSource implements ClientSource {
 
     private OkHttpClient okHttpClient;
@@ -20,9 +22,9 @@ public class RestClientSource implements ClientSource {
     private final String eventsUrl = "http://www.bonn.de/tools/mobil/api.json.php?mod=veranstaltungen";
 
     @Inject
-    public RestClientSource(OkHttpClient okHttpClient) {
+    public RestClientSource(OkHttpClient okHttpClient, Gson gson) {
         this.okHttpClient = okHttpClient;
-        this.gson = new Gson();
+        this.gson = gson;
     }
 
     @Override
@@ -44,6 +46,9 @@ public class RestClientSource implements ClientSource {
         return null;
     }
 
+    /**
+     * Response Wrapper
+     */
     private static class ResponseEvents {
         boolean success;
         Event[] items;
