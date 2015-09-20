@@ -1,5 +1,7 @@
 package com.evgeny.daggersample.injection.module;
 
+import android.content.Context;
+
 import com.evgeny.daggersample.injection.scope.ActivityScope;
 import com.evgeny.daggersample.ui.BaseActivity;
 import com.evgeny.daggersample.EventListAdapter;
@@ -15,9 +17,15 @@ public class ActivityModule {
         this.activity = activity;
     }
 
+//    @Provides
+//    @ActivityScope
+//    public EventListAdapter provideListAdapter() {
+//        return new EventListAdapter(activity);
+//    }
+
     @Provides
     @ActivityScope
-    public EventListAdapter provideListAdapter() {
-        return new EventListAdapter(activity);
+    public Context provideActivityContext() {
+        return activity;
     }
 }

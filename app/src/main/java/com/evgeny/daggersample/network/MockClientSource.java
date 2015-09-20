@@ -1,6 +1,9 @@
-package com.evgeny.daggersample.data;
+package com.evgeny.daggersample.network;
 
 import android.util.Log;
+
+import com.evgeny.daggersample.data.Event;
+import com.evgeny.daggersample.network.ClientSource;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -29,5 +32,10 @@ public class MockClientSource implements ClientSource {
         return new Event[]{
                 event1, event2, event3
         };
+    }
+
+    @Override
+    public Event[] findAllAsync() {
+        return new Event[0];
     }
 }

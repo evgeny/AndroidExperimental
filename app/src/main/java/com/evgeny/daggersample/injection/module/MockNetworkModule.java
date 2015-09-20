@@ -1,7 +1,7 @@
 package com.evgeny.daggersample.injection.module;
 
-import com.evgeny.daggersample.data.ClientSource;
-import com.evgeny.daggersample.data.MockClientSource;
+import com.evgeny.daggersample.network.ClientSource;
+import com.evgeny.daggersample.network.MockClientSource;
 
 import javax.inject.Singleton;
 
